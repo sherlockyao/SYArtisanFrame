@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Decodes</key>
+        <dict>
+            <key>Home</key>
+            <dict>
+                <key>builder</key>
+                <string>homeBuilder</string>
+            </dict>
+            <key>Test</key>
+            <dict>
+                <key>builder</key>
+                <string>detailBuilder</string>
+            </dict>
+        </dict>
+        <key>Destinations</key>
+        <dict>
+            <key>Home-Next</key>
+            <dict>
+                <key>target</key>
+                <string>Detail</string>
+                <key>navigator</key>
+                <string>defaultPresent</string>
+            </dict>
+        </dict>
+    </dict>
+</plist>
