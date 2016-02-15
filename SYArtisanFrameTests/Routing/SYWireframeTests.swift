@@ -9,22 +9,39 @@
 import XCTest
 @testable import SYArtisanFrame
 
+class SYHomeViewController: UIViewController {
+    var executedFlag = false
+    
+    override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+        executedFlag = true
+    }
+}
+
 class SYWireframeTests: XCTestCase {
     
-//    override func setUp() {
-//        super.setUp()
-//        // Put setup code here. This method is called before the invocation of each test method in the class.
-//    }
-//    
-//    override func tearDown() {
-//        // Put teardown code here. This method is called after the invocation of each test method in the class.
-//        super.tearDown()
-//    }
-//    
-    func testInitialization() {
+    override func setUp() {
+        super.setUp()
         SYWireframe.setDefaultPlistFileName("SYWireframe-Sample")
+        SYWireframe.defaultWireframe.registerViewControllerBuilder({ (params) -> UIViewController in
+            return UIViewController()
+            }, forName: "list")
+        SYWireframe.defaultWireframe.registerDefaultNavigators()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testInitialization() {
         let wireframe = SYWireframe.defaultWireframe
         XCTAssertNotNil(wireframe)
     }
     
+    func testNavigateToPort() {
+        let viewController = SYHomeViewController()
+        SYWireframe.defaultWireframe.navigateToPort("List", gate: "Products", params: [String: AnyObject](), fromViewController: viewController) { () -> Void in
+            //do nothing
+        }
+        XCTAssertTrue(viewController.executedFlag)
+    }
 }

@@ -62,7 +62,7 @@ public class SYWireframe {
         var codes = [String: String]()
         for (code, properties) in decodes {
             if let className = properties["class"] {
-                codes.updateValue(className, forKey: code)
+                codes.updateValue(code, forKey: className)
             }
         }
         self.codes = codes
@@ -195,7 +195,7 @@ public class SYWireframe {
     private static var defaultPropertyListFileName = "SYWireframe"
     
     private func destinationKeyForPort(port: String, gate: String, fromViewController: UIViewController) -> String {
-        let code = codes[_stdlib_getDemangledTypeName(fromViewController)]!
+        let code = codes[String(fromViewController.dynamicType)]!
         if "" == gate {
             return code + "-" + port
         } else {
