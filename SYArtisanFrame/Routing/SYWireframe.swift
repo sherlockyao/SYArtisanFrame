@@ -81,8 +81,64 @@ public class SYWireframe {
         builders.updateValue(builder, forKey: builderName)
     }
     
+    /**
+     Default Builder list:
+        - UIAlertController
+     */
+    public func registerDefaultBuilders() {
+        registerViewControllerBuilder({ (params) -> UIViewController in
+            let alertController = UIAlertController(title: params["title"] as? String, message: params["message"] as? String, preferredStyle: .Alert)
+            if let actions = params["actions"] as? [UIAlertAction] {
+                for action in actions {
+                    alertController.addAction(action)
+                }
+            }
+            if let color = params["color"] as? UIColor {
+                alertController.view.tintColor = color
+            }
+            return alertController
+        }, forName: "alert")
+    }
+    
     public func registerViewControllerNavigator(navigator: SYWireframeViewControllerNavigator, forName navigatorName: String) {
         navigators.updateValue(navigator, forKey: navigatorName)
+    }
+    
+    /**
+     Default Navigator list:
+        - animated-present (animated == true)
+        - instant-present (animated == false)
+        - animated-dismiss
+        - instand-dismiss
+        - animated-push
+        - animated-pop
+        - animated-pop-root
+     */
+    public func registerDefaultNavigators() {
+        registerViewControllerNavigator({ (fromViewController, toViewController, completionHandler) -> Void in
+            fromViewController.presentViewController(toViewController, animated: true, completion: completionHandler)
+            }, forName: "animated-present")
+        registerViewControllerNavigator({ (fromViewController, toViewController, completionHandler) -> Void in
+            fromViewController.presentViewController(toViewController, animated: false, completion: completionHandler)
+            }, forName: "instant-present")
+        registerViewControllerNavigator({ (fromViewController, toViewController, completionHandler) -> Void in
+            fromViewController.dismissViewControllerAnimated(true, completion: completionHandler)
+            }, forName: "animated-dismiss")
+        registerViewControllerNavigator({ (fromViewController, toViewController, completionHandler) -> Void in
+            fromViewController.dismissViewControllerAnimated(false, completion: completionHandler)
+            }, forName: "instant-dismiss")
+        registerViewControllerNavigator({ (fromViewController, toViewController, completionHandler) -> Void in
+            fromViewController.navigationController?.pushViewController(toViewController, animated: true)
+            completionHandler()
+            }, forName: "animated-push")
+        registerViewControllerNavigator({ (fromViewController, toViewController, completionHandler) -> Void in
+            fromViewController.navigationController?.popViewControllerAnimated(true)
+            completionHandler()
+            }, forName: "animated-pop")
+        registerViewControllerNavigator({ (fromViewController, toViewController, completionHandler) -> Void in
+            fromViewController.navigationController?.popToRootViewControllerAnimated(true)
+            completionHandler()
+            }, forName: "animated-pop-root")
     }
     
     // MARK: Configuration
