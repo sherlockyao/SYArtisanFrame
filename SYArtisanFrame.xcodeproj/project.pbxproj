@@ -12,6 +12,7 @@
 		364A23E41C27F263007700F6 /* SYWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A23E31C27F263007700F6 /* SYWireframe.swift */; };
 		364A23E61C27F40F007700F6 /* SYWireframe-Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 364A23E51C27F40F007700F6 /* SYWireframe-Sample.plist */; };
 		365D771D1C703175006A37F1 /* SYWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D771C1C703175006A37F1 /* SYWireframeTests.swift */; };
+		365D77221C70966A006A37F1 /* SYWireframeTransitionApparatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D77211C70966A006A37F1 /* SYWireframeTransitionApparatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		364A23E31C27F263007700F6 /* SYWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SYWireframe.swift; path = Routing/SYWireframe.swift; sourceTree = "<group>"; };
 		364A23E51C27F40F007700F6 /* SYWireframe-Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SYWireframe-Sample.plist"; path = "Routing/SYWireframe-Sample.plist"; sourceTree = "<group>"; };
 		365D771C1C703175006A37F1 /* SYWireframeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SYWireframeTests.swift; path = Routing/SYWireframeTests.swift; sourceTree = "<group>"; };
+		365D77211C70966A006A37F1 /* SYWireframeTransitionApparatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SYWireframeTransition\bApparatus.swift"; path = "Routing/SYWireframeTransition\bApparatus.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				364A23E31C27F263007700F6 /* SYWireframe.swift */,
+				365D77211C70966A006A37F1 /* SYWireframeTransitionApparatus.swift */,
 				364A23E51C27F40F007700F6 /* SYWireframe-Sample.plist */,
 			);
 			name = Routing;
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				365D77221C70966A006A37F1 /* SYWireframeTransitionApparatus.swift in Sources */,
 				364A23E41C27F263007700F6 /* SYWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
