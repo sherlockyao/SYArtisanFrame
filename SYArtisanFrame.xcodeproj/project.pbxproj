@@ -13,6 +13,8 @@
 		364A23E61C27F40F007700F6 /* SYWireframe-Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 364A23E51C27F40F007700F6 /* SYWireframe-Sample.plist */; };
 		365D771D1C703175006A37F1 /* SYWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D771C1C703175006A37F1 /* SYWireframeTests.swift */; };
 		365D77221C70966A006A37F1 /* SYWireframeTransitionApparatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D77211C70966A006A37F1 /* SYWireframeTransitionApparatus.swift */; };
+		36A7E1431C7591FB0084B318 /* View+SYJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A7E1421C7591FB0084B318 /* View+SYJoint.swift */; };
+		36A7E1451C75E86F0084B318 /* SYJointConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A7E1441C75E86F0084B318 /* SYJointConstraint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		364A23E51C27F40F007700F6 /* SYWireframe-Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SYWireframe-Sample.plist"; path = "Routing/SYWireframe-Sample.plist"; sourceTree = "<group>"; };
 		365D771C1C703175006A37F1 /* SYWireframeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SYWireframeTests.swift; path = Routing/SYWireframeTests.swift; sourceTree = "<group>"; };
 		365D77211C70966A006A37F1 /* SYWireframeTransitionApparatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SYWireframeTransition\bApparatus.swift"; path = "Routing/SYWireframeTransition\bApparatus.swift"; sourceTree = "<group>"; };
+		36A7E1421C7591FB0084B318 /* View+SYJoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "View+SYJoint.swift"; path = "Layout/View+SYJoint.swift"; sourceTree = "<group>"; };
+		36A7E1441C75E86F0084B318 /* SYJointConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SYJointConstraint.swift; path = Layout/SYJointConstraint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +81,10 @@
 		364A23CA1C27F13C007700F6 /* SYArtisanFrame */ = {
 			isa = PBXGroup;
 			children = (
-				364A23E21C27F14C007700F6 /* Routing */,
 				364A23CB1C27F13C007700F6 /* SYArtisanFrame.h */,
-				364A23CD1C27F13C007700F6 /* Info.plist */,
+				364A23E21C27F14C007700F6 /* Routing */,
+				36A7E1401C758F7D0084B318 /* Layout */,
+				36A7E1411C758FC10084B318 /* Supporting Files */,
 			);
 			path = SYArtisanFrame;
 			sourceTree = "<group>";
@@ -109,6 +114,23 @@
 				365D771C1C703175006A37F1 /* SYWireframeTests.swift */,
 			);
 			name = Routing;
+			sourceTree = "<group>";
+		};
+		36A7E1401C758F7D0084B318 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				36A7E1421C7591FB0084B318 /* View+SYJoint.swift */,
+				36A7E1441C75E86F0084B318 /* SYJointConstraint.swift */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		36A7E1411C758FC10084B318 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				364A23CD1C27F13C007700F6 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A7E1431C7591FB0084B318 /* View+SYJoint.swift in Sources */,
 				365D77221C70966A006A37F1 /* SYWireframeTransitionApparatus.swift in Sources */,
 				364A23E41C27F263007700F6 /* SYWireframe.swift in Sources */,
+				36A7E1451C75E86F0084B318 /* SYJointConstraint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
